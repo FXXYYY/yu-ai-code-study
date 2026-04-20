@@ -5,6 +5,7 @@ import lombok.Getter;
 
 /**
  * 代码生成类型枚举
+ * @author fxy
  */
 @Getter
 public enum CodeGenTypeEnum {

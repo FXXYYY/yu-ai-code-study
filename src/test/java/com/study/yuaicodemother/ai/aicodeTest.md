@@ -1,0 +1,183 @@
+我将为您创建一个简单的单页面网站，显示"Hello World"。
+
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World 页面</title>
+    <style>
+        /* 重置默认样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* 头部样式 */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        /* 主要内容区域 */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        
+        .hero {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 4rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: auto;
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            header, footer {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Hello World</div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <h1>Hello World</h1>
+            <p class="subtitle">欢迎来到这个简单的单页面网站</p>
+            <p>这是一个使用纯HTML、CSS和JavaScript构建的响应式页面。</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Hello World 页面. 使用原生技术构建.</p>
+    </footer>
+    
+    <script>
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Hello World 页面已加载完成！');
+            
+            // 为标题添加点击效果
+            const title = document.querySelector('h1');
+            title.addEventListener('click', function() {
+                this.style.color = this.style.color === 'rgb(231, 76, 60)' ? '#2c3e50' : '#e74c3c';
+                console.log('标题被点击了！');
+            });
+            
+            // 显示当前时间
+            const updateTime = function() {
+                const now = new Date();
+                const timeString = now.toLocaleTimeString('zh-CN');
+                console.log('当前时间: ' + timeString);
+            };
+            
+            // 初始显示时间
+            updateTime();
+            
+            // 每秒更新一次时间（仅控制台显示）
+            setInterval(updateTime, 1000);
+        });
+    </script>
+</body>
+</html>
+```
+
+这个页面包含以下特点：
+
+1. **响应式设计**：使用媒体查询确保在不同设备上都能良好显示
+2. **现代布局**：使用Flexbox进行布局，使内容垂直居中
+3. **视觉层次**：清晰的标题、副标题和正文内容
+4. **交互功能**：点击标题会改变颜色，控制台显示当前时间
+5. **动画效果**：标题有淡入动画
+6. **完整结构**：包含页头、主体内容和页脚
+
+页面加载完成后，点击"Hello World"标题会改变颜色，控制台会显示当前时间。所有代码都包含在一个HTML文件中，没有外部依赖。

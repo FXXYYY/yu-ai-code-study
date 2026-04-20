@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    /* Reset and base styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .container {
+        text-align: center;
+        max-width: 800px;
+        width: 100%;
+        padding: 40px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .hello-world {
+        font-size: 4rem;
+        color: #2c3e50;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+        color: #7f8c8d;
+        line-height: 1.6;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .hello-world {
+            font-size: 3rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hello-world {
+            font-size: 2.5rem;
+        }
+
+        .container {
+            padding: 30px 20px;
+        }
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+    <h1 class="hello-world">Hello World</h1>
+    <p class="subtitle">Welcome to this simple web page.</p>
+</main>
+<script>// Main JavaScript for Hello World page
+
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Hello World page loaded successfully!');
+
+    // Get the main heading element
+    const helloWorldElement = document.querySelector('.hello-world');
+
+    // Add a click event listener to the heading
+    helloWorldElement.addEventListener('click', function() {
+        // Toggle a special class for visual feedback
+        this.classList.toggle('clicked');
+
+        // Change the text temporarily when clicked
+        const originalText = 'Hello World';
+        const newText = 'Hello Universe!';
+
+        if (this.textContent === originalText) {
+            this.textContent = newText;
+
+            // Revert back after 1.5 seconds
+            setTimeout(() => {
+                this.textContent = originalText;
+            }, 1500);
+        }
+
+        console.log('Hello World heading was clicked!');
+    });
+
+    // Add a simple hover effect using JavaScript
+    helloWorldElement.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.05)';
+        this.style.transition = 'transform 0.3s ease';
+    });
+
+    helloWorldElement.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+    });
+});
+</script>
+</body>
+</html>
+
