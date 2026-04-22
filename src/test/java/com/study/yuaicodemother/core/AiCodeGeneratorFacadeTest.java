@@ -27,7 +27,7 @@ public class AiCodeGeneratorFacadeTest {
     }
     @Test
     public void generateAndSaveCodeStream() {
-        Flux<String> fileFlux = aiCodeGeneratorFacade.generateAndSaveCodeStream("你好，世界🌍。不超过30个字符", CodeGenTypeEnum.MULTI_FILE);
+        Flux<String> fileFlux = aiCodeGeneratorFacade.generateAndSaveCodeStream("你好，世界🌍。不超过30个字符", CodeGenTypeEnum.MULTI_FILE, -1L);
         List<String> result = fileFlux.collectList().block();
         Assertions.assertNotNull(result);
     }

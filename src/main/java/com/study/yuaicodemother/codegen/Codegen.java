@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public class Codegen {
 
-    public static final String[] TABLES = {"user"};
+    public static final String[] TABLES = {"app"};
 
     public static void main(String[] args) {
         Dict dict = YamlUtil.loadByPath("application.yaml");
