@@ -61,3 +61,13 @@ langchain4j:
       log-responses: true
       max-tokens: 8192
 
+# 添加 COS 对象存储配置（需要从腾讯云获取）
+cos:
+  client:
+    host:
+    secretId:
+    secretKey:
+    region: ap-nanjing
+    bucket: 20260423-1318126650
+
+

@@ -2,6 +2,7 @@ package com.study.yuaicodemother.service;
 
 import com.mybatisflex.core.query.QueryWrapper;
 import com.mybatisflex.core.service.IService;
+import com.study.yuaicodemother.module.dto.app.AppAddRequest;
 import com.study.yuaicodemother.module.dto.app.AppQueryRequest;
 import com.study.yuaicodemother.module.entity.App;
 import com.study.yuaicodemother.module.entity.User;
@@ -28,4 +29,7 @@ public interface AppService extends IService<App> {
 
     String deployApp(Long appId, User loginUser);
 
+    void generateAppScreenshotAsync(Long appId, String appUrl);
+
+    Long createApp(AppAddRequest appAddRequest, User loginUser);
 }
