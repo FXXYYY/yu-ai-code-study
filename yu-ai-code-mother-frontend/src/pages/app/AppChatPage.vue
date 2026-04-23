@@ -504,6 +504,13 @@ const generateCode = async (userMessage: string, aiMessageIndex: number) => {
       if (streamCompleted) return
 
       try {
+        // 检查是否为特殊结束标记
+        if (event.data === 'done') {
+          // 这是正常结束信号，不需要处理
+          console.log('SSE stream completed normally')
+          return
+        }
+
         // 解析JSON包装的数据
         const parsed = JSON.parse(event.data)
         const content = parsed.d
