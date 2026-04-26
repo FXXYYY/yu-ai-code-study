@@ -64,10 +64,28 @@ langchain4j:
 # 添加 COS 对象存储配置（需要从腾讯云获取）
 cos:
   client:
-    host:
-    secretId:
-    secretKey:
+    host: https://20260423-1318126650.cos.ap-nanjing.myqcloud.com
+    secretId: fxy
+    secretKey: m2tA[Alf
     region: ap-nanjing
     bucket: 20260423-1318126650
+# Pexels 图片搜索配置
+pexels:
+  api-key: <Your API Key>
+# 阿里云 DashScope 配置
+# LangGraph4j Studio 配置
+# 注意：langgraph4j-studio-springboot 不提供内置 UI，需访问静态页面
+# 访问地址: http://localhost:8123/api/langgraph4j/studio
+langgraph4j:
+  studio:
+    # Studio HTML 页面路径（通过 Controller 提供）
+    path: /langgraph4j/studio
+    # 是否启用工作流 Bean 注册
+    enabled: true
+
+dashscope:
+  api-key:
+  image-model: wan2.2-t2i-flash
+
 
 
